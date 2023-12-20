@@ -307,6 +307,8 @@ BayesGLM <- function(
     for (ss in 1:nS) {
       data[[ss]]$BOLD <- data[[ss]]$BOLD[,mask2,drop=FALSE]
     }
+  } else {
+    mask2 <- mask
   }
   if (do_Bayesian && !do_EM) {spde <- INLA::inla.spde2.matern(mesh)}
   if (do_EM) {
